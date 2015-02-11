@@ -28,12 +28,27 @@ def add_audio(request):
     data = {
        'audio_form': form,
     }
-    c = {}
-    c.update(csrf(request))
+    #c = RequestContext(request.POST, {})
     '''c = {}
     c.update(csrf(request))'''
 
-    #return render_to_response(template, data, RequestContext(request, c))
-    return render(template, data, RequestContext(request, c))
+    #return render_to_response(template, data:c[data], RequestContext(request, {}))
+    return render_to_response(template, data, context_instance=RequestContext(request))
+    #return render_to_response(template, c)
+
+
+'''from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
+from .forms import UploadAudioForm
+
+def upload_file(request):
+	if request.method == 'POST':
+		form = UploadAudioForm(request.POST, request.FILES)
+		if form.is_valid():
+			handle_uploaded_file(request.FILES['file'])
+			return HttpResponseRedirect('/login.html')
+	else:
+		form = UploadAudioForm()
+	return render_to_response('audio.html', {'form': form})'''
     
 

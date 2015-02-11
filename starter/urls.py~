@@ -8,5 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', 'login.views.login_user'),
-    url(r'^$', 'audio_uploader.views.add_audio'),
+    url(r'^audio/', 'audio_uploader.views.add_audio'),
     )

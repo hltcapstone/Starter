@@ -17,9 +17,9 @@ body{
 		{% if next %}
 		<input type="hidden" name="next" value="{{ next }}" />
 		{% endif %}
-		username:
+		Username:
 		<input type="text" name="username" value="{{ username}}" /><br />
-		password:
+		Password:
 		<input type="password" name="password" value="" /><br />
 
 		<input type="submit" value="Log In" />

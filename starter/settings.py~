@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #TEMPLATE_DIR = os.path.join(BASE_DIR, '/home/hlt/Starter/starter/login/templates/registration')
-TEMPLATE_DIR = os.path.join(BASE_DIR, '/home/hlt/Starter/starter/templates')
+#TEMPLATE_DIR = os.path.join(BASE_DIR, '/home/hlt/Starter/starter/templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,7 +36,7 @@ MEDIA_URL = ''
 
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth.models',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

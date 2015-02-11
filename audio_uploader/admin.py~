@@ -6,8 +6,8 @@ from django.contrib import admin
 from audio_uploader.models import audio_file_player
 
 # add 'audio_file_player' tag to your admin view
-list_display = (..., 'audio_file_player', ...)
-#list_display = ('audio_file_player')
+#list_display = (..., 'audio_file_player', ...)
+list_display = ('audio_file_player')
 actions = ['custom_delete_selected']
 
 def custom_delete_selected(self, request, queryset):

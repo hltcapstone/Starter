@@ -22,3 +22,5 @@ def audio_file_player(self):
 
 audio_file_player.allow_tags = True
 audio_file_player.short_description = ('Audio file player')
+
+

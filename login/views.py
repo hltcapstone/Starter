@@ -1,7 +1,6 @@
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.template import RequestContext
-#from django.core.context_processors import csrf
 
 # Create your views here.
 
@@ -28,6 +27,22 @@ def login_user(request):
     c = {}
     c.update(csrf(request))
 
-    #return render_to_response('audio.html',{'state':state, 'username': username}, RequestContext(response, c))
+    return render_to_response('audio.html',{'state':state, 'username': username}, RequestContext(request, c))
     #return render_to_response(('audio.html',c), RequestContext(request))
-    return render('audio.html',{'state':state, 'username': username}, RequestContext(response, c))
+    #return render('audio.html',{'state':state, 'username':username}, RequestContext(response, c))
+
+#def loginUser(request):
+#	c = RequestContext(request.POST, {})
+#	#c.update(csrf(request))
+#	username = request.POST['username']
+#	password = request.POST['password']
+#	user = authenticate(username=username, password=password)
+#	if user is not  None:
+#		if user.is_active:
+#			login(request, user)
+#		else:
+#			print 'Disabled account'
+#	else:
+#		print 'invalid username or password'
+	#return render_to_response('audio.html', RequestContext(response, {}))
+#	return render_to_response('audio.html', c)
