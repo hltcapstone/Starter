@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Hello</title>
+<title>Audio</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <style>
 body{
@@ -12,17 +12,11 @@ body{
 </style>
 </head>
 <body>
-	{{ state }}
-	<form action="/audio/" method="post">
-		{% if next %}
-		<input type="hidden" name="next" value="{{ next }}" />
-		{% endif %}
-		Username:
-		<input type="text" name="username" value="{{ username}}" /><br />
-		Password:
-		<input type="password" name="password" value="" /><br />
-
-		<input type="submit" value="Log In" />
+	{{ form }}
+	<form action="templates/audio/" method="post">
+	{{ form }}
+	<input type="file" multiple name="data" value="{{ form }}" />
+	<input type="submit" value="Upload" />
 	</form>
 </body>
-</html> 
+</html>

@@ -4,13 +4,15 @@ from django.template import RequestContext
 from audiofield.forms import CustomerAudioFileForm
 #from django.template.context_processors import csrf
 from django.core.context_processors import csrf
+import os
+
 
 # Create your views here.
 
 #@login_required
 def add_audio(request):
     
-    template = 'templates/audio.html'
+    template = 'audio.html'
     form = CustomerAudioFileForm()
 
     # Add audio
@@ -36,6 +38,8 @@ def add_audio(request):
     return render_to_response(template, data, context_instance=RequestContext(request))
     #return render_to_response(template, c)
 
+def upload_audio():
+	os.system("tsunamid *")
 
 '''from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response

@@ -27,7 +27,7 @@ def login_user(request):
     c = {}
     c.update(csrf(request))
 
-    return render_to_response('audio.html',{'state':state, 'username': username}, RequestContext(response, c))
+    return render_to_response('login.html',{'state':state, 'username': username}, RequestContext(request, c))
     #return render_to_response(('audio.html',c), RequestContext(request))
     #return render('audio.html',{'state':state, 'username':username}, RequestContext(response, c))
 

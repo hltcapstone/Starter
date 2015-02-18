@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/', 'login.views.login_user'),
-    url(r'^audio/', 'audio_uploader.views.add_audio'),
+    #url(r'^login/', 'login.views.login_user'),
+	url(r'^login/', 'login.html'),
+    url(r'^audio/$', 'audio_uploader.views.add_audio'),
     )
