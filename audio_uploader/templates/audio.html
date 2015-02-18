@@ -12,11 +12,12 @@ body{
 </style>
 </head>
 <body>
-	{{ form }}
-	<form action="templates/audio/" method="post">
-	{{ form }}
-	<input type="file" multiple name="data" value="{{ data }}" />
-	<input type="submit" value="Upload" />
+	{{ state }}
+	<form action="/audio/" method="post">
+
+		<input type="file" multiple name="data" value="{{ data }}" />
+		<input type="button" value="Upload" name="upload"/>
+
 	</form>
 </body>
 </html>
