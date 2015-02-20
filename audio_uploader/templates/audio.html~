@@ -3,21 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>Audio</title>
+<link rel="stylesheet" href="style.css"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<style>
-body{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size: 12px;
-}
-</style>
 </head>
+
 <body>
-	{{ state }}
-	<form action="template/audio/" method="post">
+	<div id="main">
+		<h1>Upload Audio</h1>
+		<form method="POST" enctype="multipart/form-data" action="upload.php">
+			<input type="file" name="audio" id="audio" multiple />
+			<button type="submit" id="btn">Upload</button>
+		</form>
 
-		<input type="file" multiple name="data" value="{{ data }}" />
-		<input type="button" value="Upload" name="upload"/>
+	<div id="response"></div>
+	<ul id="audio-list">
 
-	</form>
+	</ul>
 </body>
 </html>

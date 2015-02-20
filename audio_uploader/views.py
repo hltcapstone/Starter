@@ -38,7 +38,7 @@ def add_audio(request):
     return render_to_response(template, data, context_instance=RequestContext(request))
     #return render_to_response(template, c)
 
-'''def upload_audio(request):
+def upload_audio(request):
 	state = 'Upload Audio'
 	if (request.GET.get('data')):
 		os.system("mv" + data + " /home/hlt/Desktop/Test")
@@ -46,7 +46,7 @@ def add_audio(request):
 			os.system("tsunamid *")
 			state = 'Audio Successfully Uploaded!'
 		
-	return render_to_response('auth.html', {state:'state'})'''
+	return render_to_response('auth.html', {state:'state'})
 
 '''from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
