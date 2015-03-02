@@ -7,7 +7,7 @@ from .forms import ProfileImageForm
 from .models import ProfileImage
 
 class ProfileImageView(FormView):
-    template_name = 'main/profile_image_form.html'
+    template_name = 'audio.html'
     form_class = ProfileImageForm
 
     def form_valid(self, form):

@@ -9,10 +9,11 @@
 
 <body>
 	<div id="main">
-		<h1>Upload Audio</h1>
-		<form method="POST" enctype="multipart/form-data" action="upload.php">
+		<h1>Upload Audio</h1> 
+		<!--We need to fix the "action" part. its referencing something that doesn't exist, where does 			 															audio.html link too?-->
+		<form method="post" enctype="multipart/form-data" action="upload.php">{% csrf_token %}
 			<input type="file" name="audio" id="audio" multiple />
-			<button type="submit" id="btn">Upload</button>
+			<button type="submit" value="upload" name="submit" id="btn">Upload</button>
 		</form>
 
 	<div id="response"></div>
@@ -20,5 +21,8 @@
 
 	</ul>
 	</div>
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="upload.js"></script>-->
 </body>
 </html>

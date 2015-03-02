@@ -1,4 +1,4 @@
 from django import forms
 
-class UploadAudioForm(forms.Form):
-	file = forms.FileField()
+class ProfileImageForm(forms.Form):
+	image = forms.FileField(label = "Select File")

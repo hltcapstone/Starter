@@ -29,7 +29,7 @@ h1 {
 	margin-bottom: 19px;
 }
 
-#audio-list li audio {
+#image-list li audio {
 	width: 258px;
 	vertical-align: middle;
 	border: 1px solid #474747;

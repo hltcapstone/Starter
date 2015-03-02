@@ -8,26 +8,37 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.contrib.auth import authenticate, login
 
+
 def login_user(request):
-    state = "Please log in below..."
-    username = password = ''
-    if request.POST:
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+	state = "Please log in below..."
+	check = False
+	username = password = ''
+	c = {}
+	c.update(csrf(request))
+	if request.POST:
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		#username = request.POST['username']
+		#password = request.POST['password']
 
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                state = "You're successfully logged in!"
-            else:
-                state = "Your account is not active, please contact the site admin."
-        else:
-            state = "Your username and/or password were incorrect."
-    c = {}
-    c.update(csrf(request))
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				state = "You're successfully logged in!"
+				check = True
+				return render_to_response('audio.html',{'state':state, 'username': username}, RequestContext(request, c))
+			else:
+				state = "Your account is not active, please contact the site admin."
+				return render_to_response('auth.html',{'state':state, 'username': username}, RequestContext(request, c))
+		else:
+			state = "Your username and/or password were incorrect."
+			return render_to_response('auth.html',{'state':state, 'username': username}, RequestContext(request, c))
 
-    return render_to_response('auth.html',{'state':state, 'username': username}, RequestContext(request, c))
+	return render_to_response('auth.html',{'state':state, 'username': username}, RequestContext(request, c))
+    
+
+    
     #return render_to_response(('audio.html',c), RequestContext(request))
     #return render('audio.html',{'state':state, 'username':username}, RequestContext(response, c))
 

@@ -1,4 +1,4 @@
-from django import models
+from django.db import models
 
 class ProfileImage(models.Model):
 	image = models.FileField(upload_to = 'profile/%Y/%m/%d')

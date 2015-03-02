@@ -13,17 +13,31 @@ body{
 </head>
 <body>
 	{{ state }}
-	<form action="/login/" method="post">{% csrf_token %}
+	{% if check == "True" %}
+	<form action="/audio/" method="POST">{% csrf_token %}
 		{% if next %}
-		<input type="hidden" name="next" value="{{ next }}" />
+		<input type="hidden" name="next" value="/audio/" />
 		{% endif %}
 		Username:
 		<input type="text" name="username" value="{{ username }}" /><br />
 		Password:
-		<input type="password" name="password" value="" /><br />
+		<input type="password" name="password" value="{{ password }}" /><br />
 
 		<input type="submit" value="Log In" />
 	</form>
+	{% else %}
+	<form action="/login/" method="POST">{% csrf_token %}
+		{% if next %}
+		<input type="hidden" name="next" value="/login/" />
+		{% endif %}
+		Username:
+		<input type="text" name="username" value="{{ username }}" /><br />
+		Password:
+		<input type="password" name="password" value="{{ password }}" /><br />
+
+		<input type="submit" value="Log In" />
+	</form>
+	{% endif %}
 </body>
 </html> 
 

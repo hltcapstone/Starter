@@ -28,8 +28,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_ROOT = '/home/hlt/Desktop/Test'
+MEDIA_URL = '/media/'
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
-    'audiofield',
+#    'audiofield',
     'audio_uploader',
 )
 
